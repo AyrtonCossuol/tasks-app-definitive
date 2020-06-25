@@ -3,32 +3,37 @@ const jwt = require('jwt-simple');
 const bcrypt = require('bcrypt-nodejs');
 
 module.exports = app => {
-    const signin = async (request, response) => {
-        if(!request.body.email || !request.body.password) {
-            return response.status(400).send('Dados incompletos.');
+    const signin = async (req, res) => {
+        if (!req.body.email || !req.body.password) {
+            return res.status(400).send('Dados incompletos');
         }
 
         const user = await app.db('users')
-            .whereRay("LOWER(email) = LOWER(?)", request.body.email)
+            .whereRaw("LOWER(email) = LOWER(?)", req.body.email)
             .first();
 
-        if(user) {
-            bcrypt.compare(request.body.password, user.password, (error, isMatch) => {
-                if(error || !isMatch) {
-                    return response.status(401).send();
+        if (user) {
+            bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
+                if (err || !isMatch) {
+                    return res.status(401).send('A senha informada é inválida!');
                 }
 
-                const payload = { id: user.id }
-                response.json({
+                const payload = {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                };
+
+                res.json({
                     name: user.name,
                     email: user.email,
                     token: jwt.encode(payload, authSecret),
                 });
             });
         } else {
-            response.status(400).send('Usuario nao encontrado!');
+            res.status(400).send('Usuário não cadastrado!');
         }
-    };
+    }
 
     return { signin };
-};
+}

@@ -56,7 +56,7 @@ export default class TaskList extends Component {
             visibleTasks = this.state.tasks.filter(pending);
         }
 
-        this.setState({ visibleTasks });
+        this.setState({ visibleTasks })
 
         AsyncStorage.setItem('tasksState', JSON.stringify(this.state))
     };

@@ -8,19 +8,19 @@ module.exports = app => {
         secretOrKey: authSecret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     };
-
+    
     const strategy = new Strategy(params, (payload, done) => {
         app.db('users')
             .where({ id: payload.id })
             .first()
             .then(user => {
-                if(user) {
-                    done(null, { id: user.id, email: user.email });
+                if (user) {
+                    done(null, { id: user.id, email: user.email })
                 } else {
-                    done(null, false);
+                    done(null, false)
                 }
             })
-            .catch(error => done(error, false))
+            .catch(err => done(err, false));
     });
 
     passport.use(strategy);
@@ -28,5 +28,5 @@ module.exports = app => {
     return {
         initialize: () => passport.initialize(),
         authenticate: () => passport.authenticate('jwt', { session: false }),
-    }
+    };
 };

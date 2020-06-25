@@ -1,27 +1,26 @@
 const bcrypt = require('bcrypt-nodejs');
-const { response } = require('express');
 
 module.exports = app => {
-    const obeterHash = (password, callback) => {
-        bcrypt.genSalt(10, (error, salt) => {
-            bcrypt.hash(password, salt, null, (error, hash) => callback(hash));
+    const obterHash = (password, callback) => {
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(password, salt, null, (err, hash) => callback(hash))
         });
     };
 
-    const save = (request, response) => {
-        obeterHash(request.body.password, hash => {
+    const save = (req, res) => {
+        obterHash(req.body.password, hash => {
             const password = hash;
 
             app.db('users')
-                .insert({
-                    name: request.body.name,
-                    email: request.body.email,
+                .insert({ 
+                    name: req.body.name,
+                    email: req.body.email.toLowerCase(),
                     password
                 })
-                .then(_ => response.status(204).send())
-                .catch(error => response.status(500).json(error));
+                .then(_ => res.status(204).send())
+                .catch(err => res.status(400).json(err));
         });
     };
 
-    return { save }
+    return { save };
 };
