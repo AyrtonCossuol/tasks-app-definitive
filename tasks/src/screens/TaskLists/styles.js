@@ -39,7 +39,7 @@ export default StyleSheet.create({
     iconBar: {
         flexDirection: 'row',
         marginHorizontal: 20,
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
         marginTop: 10,
     },
 
@@ -54,7 +54,6 @@ export default StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: commonStyles.colors.today,
         alignItems: 'center',
         justifyContent: 'center',
     }
