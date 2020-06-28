@@ -50,9 +50,16 @@ As seguintes ferramentas usadas na criação do projeto:
 - [Node.js][nodejs]
 - [React][reactjs]
 - [React Native][rn]
+- [PostgreSQL][pg]
 
+---
+
+<h4 align="center">
+    Feito com :blue_heart: by Ayrton Cossuol
+</h4>
 
 
 [nodejs]: https://nodejs.org/
 [reactjs]: https://reactjs.org
 [rn]: https://facebook.github.io/react-native/
+[pg]: https://www.postgresql.org/
