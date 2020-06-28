@@ -55,7 +55,7 @@ As seguintes ferramentas usadas na criação do projeto:
 ---
 
 <h4 align="center">
-    Feito com :blue_heart: by Ayrton Cossuol
+    Feito com :blue_heart: por Ayrton Cossuol
 </h4>
 
 
