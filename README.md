@@ -15,6 +15,7 @@ O projeto ainda está em construção...
   
   <img alt="tasks-login-register" title="#tasks-login-register" src="./images/login2.png" width="200px">
 </p>
+<br>
 
 - Criação e listagem das Tasks
 
@@ -22,16 +23,25 @@ O projeto ainda está em construção...
   <img alt="tasks-list-register" title="#tasks-list-register" src="./images/task-record.png" width="200px">
 
   <img alt="tasks-list-register" title="#tasks-list-register" src="./images/task-list.png" width="200px">
+  
+  <img alt="tasks-menu" title="#tasks-menu" src="./images/Menu.png" width="200px">
 </p>
+<br>
 
 <p align="center">
-  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/task-1.png" width="200px">
+  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/list-1.png" width="200px">
 
-  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/task-2.png" width="200px">
+  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/list-2.png" width="200px">
   
-  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/task-3.png" width="200px">
+  <img alt="tasks-list-register" title="#tasks-list-register" src="./images/list-3.png" width="200px">
 </p>
+<br>
 
+- Exclusão de uma Task
+
+<p align="center">
+  <img alt="tasks-delete" title="#tasks-delete" src="./images/delete-task.png" width="200px">
+</p>
 
 ## Tecnologias
 
