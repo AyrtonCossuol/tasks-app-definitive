@@ -5,7 +5,11 @@ const server = Platform.OS === 'ios'
     :  'http://10.0.2.2:3000';
 
 function showError(error) {
-    Alert.alert('Ops! Ocorreu um Problema!', `Mensagem: ${error}`);
+    if(error.response && error.response.data){
+        Alert.alert('Ops! Ocorreu um Problema!', `Mensagem: ${error.response.data}`);
+    } else {
+        Alert.alert('Ops! Ocorreu um Problema!', `Mensagem: ${error}`);
+    }
 }
 
 function showSuccess(msg) {

@@ -3,9 +3,7 @@ import {
     ImageBackground, 
     Text, 
     View, 
-    TextInput, 
     TouchableOpacity, 
-    Alert,
 } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
